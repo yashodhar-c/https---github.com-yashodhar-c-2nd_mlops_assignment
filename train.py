@@ -10,6 +10,9 @@ from imblearn.over_sampling import SMOTE
 from imblearn.under_sampling import RandomUnderSampler
 from imblearn.pipeline import Pipeline as imPipeline
 import numpy as np
+import h2o
+from h2o.automl import H2OAutoML
+
 
 df = pd.read_csv("C:\\Users\\admin\\2nd_assign_mlops\\framingham.csv")
 
@@ -71,10 +74,6 @@ print(f"Shape of y_train (target) after balancing: {y_train_balanced.shape}")
 profile = ProfileReport(df, title='Pandas Profiling Report', explorative=True)
 profile.to_file("EDA_report.html")
 
-
-
-import h2o
-from h2o.automl import H2OAutoML
 
 # Initializing H2O cluster
 h2o.init()
