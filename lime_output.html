@@ -37089,25 +37089,25 @@
 /***/ })
 /******/ ]);
 //# sourceMappingURL=bundle.js.map </script></head><body>
-        <div class="lime top_div" id="top_divY1PUI591QLJMSNH"></div>
+        <div class="lime top_div" id="top_divMDNFC3LFY088GTJ"></div>
         
         <script>
-        var top_div = d3.select('#top_divY1PUI591QLJMSNH').classed('lime top_div', true);
+        var top_div = d3.select('#top_divMDNFC3LFY088GTJ').classed('lime top_div', true);
         
             var pp_div = top_div.append('div')
                                 .classed('lime predict_proba', true);
             var pp_svg = pp_div.append('svg').style('width', '100%');
-            var pp = new lime.PredictProba(pp_svg, ["No CHD", "CHD"], [0.5, 0.3726807818924629, 0.12731921810753705]);
+            var pp = new lime.PredictProba(pp_svg, ["No CHD", "CHD"], [0.0, 0.8814356640957375, 0.1185643359042625]);
             
         
         var exp_div;
             var exp = new lime.Explanation(["No CHD", "CHD"]);
         
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["age > 0.87", -0.35345627443282523], ["prevalentStroke <= -0.08", 0.32810901935724535], ["sysBP > 0.50", -0.19978744994167721], ["glucose > 0.22", -0.10010770113499795], ["diabetes <= -0.17", 0.09602213309076915], ["BPMeds <= -0.18", 0.08864027627831926], ["male <= -0.89", 0.08669843225659625], ["heartRate > 0.52", 0.04734594045921875], ["-0.67 < prevalentHyp <= 1.49", -0.04137523513216285], ["-0.98 < currentSmoker <= 1.02", -0.03337597072481756]], 1, exp_div);
+                exp.show([["-0.88 < age <= -0.06", 0.14895191518861423], ["-0.75 < cigsPerDay <= 0.92", 0.012061104731454969], ["-0.20 < sysBP <= 0.53", 0.005765269849001352], ["-0.67 < BMI <= -0.10", 0.0038700204813125623], ["-0.65 < heartRate <= -0.07", 0.003491930589310818], ["-0.71 < totChol <= -0.08", -0.00046768924191026116]], 1, exp_div);
                 
         var raw_div = top_div.append('div');
-            exp.show_raw_tabular([["age", "1.22", -0.35345627443282523], ["prevalentStroke", "-0.08", 0.32810901935724535], ["sysBP", "1.43", -0.19978744994167721], ["glucose", "0.30", -0.10010770113499795], ["diabetes", "-0.17", 0.09602213309076915], ["BPMeds", "-0.18", 0.08864027627831926], ["male", "-0.89", 0.08669843225659625], ["heartRate", "1.36", 0.04734594045921875], ["prevalentHyp", "1.49", -0.04137523513216285], ["currentSmoker", "1.02", -0.03337597072481756]], 1, raw_div);
+            exp.show_raw_tabular([["age", "-0.53", 0.14895191518861423], ["cigsPerDay", "0.92", 0.012061104731454969], ["sysBP", "-0.10", 0.005765269849001352], ["BMI", "-0.42", 0.0038700204813125623], ["heartRate", "-0.32", 0.003491930589310818], ["totChol", "-0.42", -0.00046768924191026116]], 1, raw_div);
         
         </script>
         </body></html>

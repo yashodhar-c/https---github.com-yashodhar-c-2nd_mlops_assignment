@@ -5,3 +5,5 @@ ydata_profiling
 imblearn
 numpy
 h2o
+tpot
+flask

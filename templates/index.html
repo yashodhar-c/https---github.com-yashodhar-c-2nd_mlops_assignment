@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoML Prediction</title>
+</head>
+<body>
+    <h2>Enter Data for Prediction</h2>
+    <form action="/predict" method="post">
+        <label for="feature1">Age:</label>
+        <input type="number" step="any" name="feature1" required><br>
+
+        <label for="feature2">Cigarettes per day:</label>
+        <input type="number" step="any" name="feature2" required><br>
+
+        <label for="feature3">Total Cholesterol:</label>
+        <input type="number" step="any" name="feature3" required><br>
+
+        <label for="feature4">Blood Pressure:</label>
+        <input type="number" step="any" name="feature4" required><br>
+
+        <label for="feature5">BMI:</label>
+        <input type="number" step="any" name="feature5" required><br>
+
+        <label for="feature6">Heart Rate:</label>
+        <input type="number" step="any" name="feature6" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+    <br>
+    <br>
+    <h2>
+        10 year risk of coronary heart disease CHD 
+        <br>
+        If prediction is 1: you are probably going to suffer from CHD in 10 yrs
+        <br>
+        If prediction is 0: you are safe!
+        <br>
+        (binary: “1”, means “Yes”, “0” means “No”)
+    {{ prediction_text }}
+    </h2>
+</body>
+</html>

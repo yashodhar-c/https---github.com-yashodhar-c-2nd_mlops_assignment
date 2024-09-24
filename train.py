@@ -12,9 +12,11 @@ from imblearn.pipeline import Pipeline as imPipeline
 import numpy as np
 import h2o
 from h2o.automl import H2OAutoML
+from tpot import TPOTClassifier
+import joblib
 
 
-df = pd.read_csv("C:\\Users\\admin\\2nd_assign_mlops\\framingham.csv")
+df = pd.read_csv("C:\\Users\\admin\\ml_ops_assignment_2\\new_framingham.csv")
 
 # Overview of the dataset
 # dataset link: https://www.kaggle.com/datasets/dileep070/heart-disease-prediction-using-logistic-regression
@@ -39,7 +41,7 @@ print(f"\nRows remaining after dropping missing values: {df_cleaned.shape[0]}")
 
 # Feature Extraction
 # Splitting the features and target variable
-X = df_cleaned.drop('TenYearCHD', axis=1)  # Features
+X = df_cleaned[['age','cigsPerDay','totChol','sysBP','BMI','heartRate']]  # Features
 y = df_cleaned['TenYearCHD']  # Target
 
 # Standardize the features (scaling/normalization)
@@ -60,6 +62,10 @@ print(f"Test set size: {X_test.shape[0]}")
 over = SMOTE(sampling_strategy='minority')  # Over-sampling the minority class
 under = RandomUnderSampler(sampling_strategy='majority')  # Under-sampling the majority class
 
+
+automl_model = TPOTClassifier(verbosity=2, generations=5, population_size=20, random_state=42)
+automl_model.fit(X_train, y_train)
+
 # Creating a pipeline
 pipeline = imPipeline(steps=[('o', over), ('u', under)])
 
@@ -70,6 +76,8 @@ X_train_balanced, y_train_balanced = pipeline.fit_resample(X_train, y_train)
 print(f"\nShape of X_train (features) after balancing: {X_train_balanced.shape}")
 print(f"Shape of y_train (target) after balancing: {y_train_balanced.shape}")
 
+# Save the trained model
+joblib.dump(automl_model.fitted_pipeline_, 'automl_model.joblib')
 
 profile = ProfileReport(df, title='Pandas Profiling Report', explorative=True)
 profile.to_file("EDA_report.html")
