@@ -1,9 +1,9 @@
-pandas==1.5.3
+pandas
 lime==0.2.0.1
-scikit-learn==1.2.1
+scikit-learn
 ydata-profiling
 imblearn
 numpy
 h2o==3.40.0.3
-tpot==0.11.7
-flask==2.3.0
+tpot
+flask
