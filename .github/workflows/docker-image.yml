@@ -44,4 +44,4 @@ jobs:
 
     - name: Test Flask App
       run: |
-       curl -X POST http://127.0.0.1:5000/predict -H 'Content-Type: application/json' \ -d '{"features": [45, 10, 220, 130, 25.5, 70]}'
+       curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -d "{\"features\": {\"age\": 45, \"cigsPerDay\": 10, \"totChol\": 220, \"sysBP\": 130, \"BMI\": 25.5, \"heartRate\": 70}}"
