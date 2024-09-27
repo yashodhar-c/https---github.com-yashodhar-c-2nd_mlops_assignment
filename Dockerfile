@@ -1,5 +1,5 @@
 # Use the official Python image from the Docker Hub
-FROM python
+FROM python:3.8-slim
 
 # Set the working directory
 WORKDIR /app
@@ -18,4 +18,4 @@ EXPOSE 5000
 ENV FLASK_APP=app.py
 
 # Run app.py when the container launches
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["python3", "app.py"]
