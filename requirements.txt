@@ -6,4 +6,4 @@ imbalanced-learn==0.12.0
 numpy
 h2o==3.40.0.3
 tpot
-flask
+Flask
