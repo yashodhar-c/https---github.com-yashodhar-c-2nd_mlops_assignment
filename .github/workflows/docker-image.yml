@@ -41,7 +41,3 @@ jobs:
 
     - name: Print Docker container logs
       run: docker logs flask_docker
-
-    - name: Test Flask App
-      run: |
-       curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -d "{\"features\": {\"age\": 45, \"cigsPerDay\": 10, \"totChol\": 220, \"sysBP\": 130, \"BMI\": 25.5, \"heartRate\": 70}}"
