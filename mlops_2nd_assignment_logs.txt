@@ -1,0 +1,549 @@
+(.venv) C:\Users\admin\ml_ops_assignment_2>python train.py
+c:\Users\admin\ml_ops_assignment_2\.venv\Lib\site-packages\tpot\builtins\__init__.py:36: UserWarning: Warning: optional dependency `torch` is not available. - skipping import of NN models.
+  warnings.warn("Warning: optional dependency `torch` is not available. - skipping import of NN models.")
+First 5 rows of the dataset:
+   age  cigsPerDay  totChol  sysBP    BMI  heartRate  TenYearCHD
+0   39         0.0    195.0  106.0  26.97       80.0           0
+1   46         0.0    250.0  121.0  28.73       95.0           0
+2   48        20.0    245.0  127.5  25.34       75.0           0
+3   61        30.0    225.0  150.0  28.58       65.0           1
+4   46        23.0    285.0  130.0  23.10       85.0           0
+
+Summary statistics:
+               age   cigsPerDay      totChol        sysBP          BMI    heartRate   TenYearCHD
+count  4238.000000  4209.000000  4188.000000  4238.000000  4219.000000  4237.000000  4238.000000
+mean     49.584946     9.003089   236.721585   132.352407    25.802008    75.878924     0.151958
+std       8.572160    11.920094    44.590334    22.038097     4.080111    12.026596     0.359023
+min      32.000000     0.000000   107.000000    83.500000    15.540000    44.000000     0.000000
+25%      42.000000     0.000000   206.000000   117.000000    23.070000    68.000000     0.000000
+50%      49.000000     0.000000   234.000000   128.000000    25.400000    75.000000     0.000000
+75%      56.000000    20.000000   263.000000   144.000000    28.040000    83.000000     0.000000
+max      70.000000    70.000000   696.000000   295.000000    56.800000   143.000000     1.000000
+
+Data types and missing values:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 4238 entries, 0 to 4237
+Data columns (total 7 columns):
+ #   Column      Non-Null Count  Dtype
+---  ------      --------------  -----
+ 0   age         4238 non-null   int64
+ 1   cigsPerDay  4209 non-null   float64
+ 2   totChol     4188 non-null   float64
+ 3   sysBP       4238 non-null   float64
+ 4   BMI         4219 non-null   float64
+ 5   heartRate   4237 non-null   float64
+ 6   TenYearCHD  4238 non-null   int64
+dtypes: float64(5), int64(2)
+memory usage: 231.9 KB
+None
+
+Missing values per column:
+age            0
+cigsPerDay    29
+totChol       50
+sysBP          0
+BMI           19
+heartRate      1
+TenYearCHD     0
+dtype: int64
+
+Rows remaining after dropping missing values: 4140
+Shape of X (features) after scaling: (4140, 6)
+Shape of y (target): (4140,)
+
+Training set size: 2898
+Test set size: 1242
+
+Generation 1 - Current best internal CV score: 0.850240605086058
+
+Generation 2 - Current best internal CV score: 0.850240605086058
+
+Generation 3 - Current best internal CV score: 0.850240605086058
+
+Generation 4 - Current best internal CV score: 0.850240605086058
+
+Generation 5 - Current best internal CV score: 0.850240605086058
+
+Best pipeline: RandomForestClassifier(input_matrix, bootstrap=True, criterion=entropy, max_features=0.9500000000000001, min_samples_leaf=16, min_samples_split=20, n_estimators=100)
+
+Shape of X_train (features) after balancing: (4920, 6)
+Shape of y_train (target) after balancing: (4920,)
+Summarize dataset: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 53/53 [00:09<00:00,  5.42it/s, Completed]
+Generate report structure: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:04<00:00,  4.54s/it] 
+Render HTML: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:04<00:00,  4.56s/it] 
+Export report to file: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 63.84it/s] 
+Checking whether there is an H2O instance running at http://localhost:54321..... not found.
+Attempting to start a local H2O server...
+; Java HotSpot(TM) 64-Bit Server VM (build 17.0.7+8-LTS-224, mixed mode, sharing)
+  Starting server from C:\Users\admin\ml_ops_assignment_2\.venv\Lib\site-packages\h2o\backend\bin\h2o.jar
+  Ice root: C:\Users\admin\AppData\Local\Temp\tmpmgyu5p70
+  JVM stdout: C:\Users\admin\AppData\Local\Temp\tmpmgyu5p70\h2o_admin_started_from_python.out
+  JVM stderr: C:\Users\admin\AppData\Local\Temp\tmpmgyu5p70\h2o_admin_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321 ... successful.
+--------------------------  -----------------------------
+H2O_cluster_uptime:         06 secs
+H2O_cluster_timezone:       Asia/Kolkata
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.46.0.5
+H2O_cluster_version_age:    27 days
+H2O_cluster_name:           H2O_from_python_admin_9etgtg
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    1.816 Gb
+H2O_cluster_total_cores:    0
+H2O_cluster_allowed_cores:  0
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://127.0.0.1:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+Python_version:             3.12.4 final
+--------------------------  -----------------------------
+Parse progress: |████████████████████████████████████████████████████████████████ (done)| 100%
+Parse progress: |████████████████████████████████████████████████████████████████ (done)| 100%
+['age', 'cigsPerDay', 'totChol', 'sysBP', 'BMI', 'heartRate', 'TenYearCHD']
+AutoML progress: |                                                               |   0%
+23:21:48.625: Project: AutoML_1_20240925_232148
+23:21:48.641: 5-fold cross-validation will be used.
+23:21:48.641: Setting stopping tolerance adaptively based on the training frame: 0.018575940419178427
+23:21:48.641: Build control seed: 1
+23:21:48.641: training frame: Frame key: AutoML_1_20240925_232148_training_py_1_sid_b7cc    cols: 7    rows: 2898  chunks: 1    size: 58365  checksum: 8000797425233084872
+23:21:48.641: validation frame: NULL
+23:21:48.641: leaderboard frame: NULL
+23:21:48.641: blending frame: NULL
+23:21:48.641: response column: TenYearCHD
+23:21:48.641: fold column: null
+23:21:48.641: weights column: null
+23:21:48.657: AutoML: XGBoost is not available; skipping it.
+23:21:48.672: Loading execution steps: [{XGBoost : [def_2 (1g, 10w), def_1 (2g, 10w), def_3 (3g, 10w), grid_1 (4g, 90w), lr_search (7g, 30w)]}, {GLM : [def_1 (1g, 10w)]}, {DRF : [def_1 (2g, 10w), XRT (3g, 10w)]}, {GBM : [def_5 (1g, 10w), def_2 (2g, 10w), def_3 (2g, 10w), def_4 (2g, 10w), def_1 (3g, 10w), grid_1 (4g, 60w), lr_annealing (7g, 10w)]}, {DeepLearning : [def_1 (3g, 10w), grid_1 (4g, 30w), grid_2 (5g, 30w), grid_3 (5g, 30w)]}, {completion : [resume_best_grids (6g, 60w)]}, {StackedEnsemble : [monotonic (9g, 10w), best_of_family_xglm (10g, 10w), all_xglm (10g, 10w)]}]
+23:21:48.735: Disabling Algo: XGBoost as requested by the user.
+23:21:48.735: AutoML job created: 2024.09.25 23:21:48.515
+23:21:48.735: AutoML build started: 2024.09.25 23:21:48.735
+23:21:48.782: AutoML: starting GLM_1_AutoML_1_20240925_232148 model training
+
+AutoML progress: |█▎                                                             |   2%
+23:21:51.819: New leader: GLM_1_AutoML_1_20240925_232148, auc: 0.7177149459850762
+23:21:51.838: AutoML: starting GBM_1_AutoML_1_20240925_232148 model training
+
+AutoML progress: |███▍                                                           |   5%
+23:21:55.979: AutoML: starting DRF_1_AutoML_1_20240925_232148 model training
+
+AutoML progress: |█████▌                                                         |   8%
+23:22:02.10: No base models, due to timeouts or the exclude_algos option. Skipping StackedEnsemble 'monotonic'.
+23:22:02.25: AutoML: starting StackedEnsemble_BestOfFamily_1_AutoML_1_20240925_232148 model training
+
+AutoML progress: |███████████████████████████████████████████████████████████████ (done)| 100%
+
+23:22:10.233: Actual modeling steps: [{GLM : [def_1 (1g, 10w)]}, {GBM : [def_5 (1g, 10w)]}, {DRF : [def_1 (2g, 10w)]}, {StackedEnsemble : [best_of_family_xglm (10g, 10w)]}]
+23:22:10.233: AutoML build stopped: 2024.09.25 23:22:10.233
+23:22:10.233: AutoML build done: built 3 models
+23:22:10.233: AutoML duration: 21.498 sec
+
+====================================================
+Leaderboard of models: 
+model_id                                                      auc    logloss     aucpr    mean_per_class_error      rmse       mse
+GLM_1_AutoML_1_20240925_232148                           0.717715   0.385277  0.31615                 0.331348  0.343119  0.11773
+StackedEnsemble_BestOfFamily_1_AutoML_1_20240925_232148  0.714857   0.386091  0.313124                0.335525  0.343355  0.117893
+GBM_1_AutoML_1_20240925_232148                           0.701756   0.390983  0.295816                0.348881  0.345312  0.11924
+DRF_1_AutoML_1_20240925_232148                           0.643811   0.552562  0.254685                0.384405  0.358011  0.128172
+[4 rows x 7 columns]
+
+====================================================
+
+Best Model Details:
+Model Details
+=============
+H2OGeneralizedLinearEstimator : Generalized Linear Modeling
+Model Key: GLM_1_AutoML_1_20240925_232148
+
+
+GLM Model: summary
+    family    link    regularization               lambda_search                                                                   number_of_predictors_total    number_of_active_predictors    number_of_iterations    training_frame
+--  --------  ------  ---------------------------  ------------------------------------------------------------------------------  ----------------------------  -----------------------------  ----------------------  -----------------------------------------------
+    binomial  logit   Ridge ( lambda = 0.002497 )  nlambda = 30, lambda.max = 8.2151, lambda.min = 0.002497, lambda.1se = 0.07009  6                             6                              33
+             AutoML_1_20240925_232148_training_py_1_sid_b7cc
+
+ModelMetricsBinomialGLM: glm
+** Reported on train data. **
+
+MSE: 0.11714046861885331
+RMSE: 0.34225789781808297
+LogLoss: 0.3834369874611082
+AUC: 0.7217901956416825
+AUCPR: 0.32355858159183
+Gini: 0.4435803912833649
+Null degrees of freedom: 2897
+Residual degrees of freedom: 2891
+Null deviance: 2461.440828408401
+Residual deviance: 2222.400779324583
+AIC: 2236.400779324583
+
+Confusion Matrix (Act/Pred) for max f1 @ threshold = 0.19934236167898442
+       0     1    Error    Rate
+-----  ----  ---  -------  --------------
+0      1950  510  0.2073   (510.0/2460.0)
+1      217   221  0.4954   (217.0/438.0)
+Total  2167  731  0.2509   (727.0/2898.0)
+
+Maximum Metrics: Maximum metrics at their respective thresholds
+metric                       threshold    value     idx
+---------------------------  -----------  --------  -----
+max f1                       0.199342     0.378101  185
+max f2                       0.0951342    0.539589  303
+max f0point5                 0.262288     0.335222  136
+max accuracy                 0.498353     0.853692  26
+max precision                0.806313     1         0
+max recall                   0.0254223    1         398
+max specificity              0.806313     1         0
+max absolute_mcc             0.147164     0.249055  240
+max min_per_class_accuracy   0.15199      0.665041  234
+max mean_per_class_accuracy  0.147164     0.670484  240
+max tns                      0.806313     2460      0
+max fns                      0.806313     437       0
+max fps                      0.0232261    2460      399
+max tps                      0.0254223    438       398
+max tnr                      0.806313     1         0
+max fnr                      0.806313     0.997717  0
+max fpr                      0.0232261    1         399
+max tpr                      0.0254223    1         398
+
+Gains/Lift Table: Avg response rate: 15.11 %, avg score: 15.11 %
+group    cumulative_data_fraction    lower_threshold    lift      cumulative_lift    response_rate    score      cumulative_response_rate    cumulative_score    capture_rate    cumulative_capture_rate   
+ gain      cumulative_gain    kolmogorov_smirnov
+-------  --------------------------  -----------------  --------  -----------------  ---------------  ---------  --------------------------  ------------------  --------------  ------------------------- 
+ --------  -----------------  --------------------
+1        0.0100069                   0.517579           4.33491   4.33491            0.655172         0.583964   0.655172                    0.583964            0.043379        0.043379
+ 333.491   333.491            0.039314
+2        0.0200138                   0.443548           2.96599   3.65045            0.448276         0.471418   0.551724                    0.527691            0.0296804       0.0730594
+ 196.599   265.045            0.0624903
+3        0.0300207                   0.404577           2.50968   3.27019            0.37931          0.424424   0.494253                    0.493268            0.0251142       0.0981735
+ 150.968   227.019            0.0802873
+4        0.0400276                   0.375241           2.50968   3.08007            0.37931          0.388377   0.465517                    0.467046            0.0251142       0.123288
+ 150.968   208.007            0.0980844
+5        0.0500345                   0.357764           1.59707   2.78347            0.241379         0.367847   0.42069                     0.447206            0.0159817       0.139269
+ 59.7071   178.347            0.105123
+6        0.100069                    0.302107           1.87085   2.32716            0.282759         0.328128   0.351724                    0.387667            0.0936073       0.232877
+ 87.0855   132.716            0.156454
+7        0.150104                    0.257062           1.87085   2.17506            0.282759         0.279125   0.328736                    0.351486            0.0936073       0.326484
+ 87.0855   117.506            0.207785
+8        0.200138                    0.222883           1.6427    2.04197            0.248276         0.237055   0.308621                    0.322879            0.0821918       0.408676
+ 64.2702   104.197            0.245668
+9        0.300207                    0.183663           1.52863   1.87085            0.231034         0.20101    0.282759                    0.282256            0.152968        0.561644
+ 52.8625   87.0855            0.307985
+10       0.399931                    0.147182           1.25918   1.71833            0.190311         0.165225   0.259707                    0.253074            0.125571        0.687215
+ 25.9184   71.8333            0.338434
+11       0.5                         0.122007           0.752905  1.52511            0.113793         0.134116   0.230504                    0.229266            0.0753425       0.762557
+ -24.7095  52.5114            0.309305
+12       0.600069                    0.0983258          0.912612  1.42297            0.137931         0.108914   0.215066                    0.209196            0.0913242       0.853881
+ -8.73878  42.2972            0.299003
+13       0.699793                    0.0802823          0.549462  1.29849            0.083045         0.0893439  0.196252                    0.192116            0.0547945       0.908676
+ -45.0538  29.8492            0.246074
+14       0.799862                    0.0641682          0.456306  1.19313            0.0689655        0.0719544  0.180328                    0.177083            0.0456621       0.954338
+ -54.3694  19.3128            0.18198
+15       0.899931                    0.0481317          0.205338  1.08329            0.0310345        0.0561295  0.163727                    0.163633            0.0205479       0.974886
+ -79.4662  8.32896            0.0883005
+16       1                           0.023145           0.250968  1                  0.037931         0.038804   0.151139                    0.151142            0.0251142       1
+ -74.9032  0                  0
+
+ModelMetricsBinomialGLM: glm
+** Reported on cross-validation data. **
+
+MSE: 0.11773045804887654
+RMSE: 0.34311872296462714
+LogLoss: 0.3852767541441393
+AUC: 0.7177149459850762
+AUCPR: 0.31615021455242615
+Gini: 0.43542989197015247
+Null degrees of freedom: 2897
+Residual degrees of freedom: 2891
+Null deviance: 2461.9310668782327
+Residual deviance: 2233.0640670194316
+AIC: 2247.0640670194316
+
+Confusion Matrix (Act/Pred) for max f1 @ threshold = 0.15533630472990037
+       0     1     Error    Rate
+-----  ----  ----  -------  --------------
+0      1661  799   0.3248   (799.0/2460.0)
+1      148   290   0.3379   (148.0/438.0)
+Total  1809  1089  0.3268   (947.0/2898.0)
+
+Maximum Metrics: Maximum metrics at their respective thresholds
+metric                       threshold    value     idx
+---------------------------  -----------  --------  -----
+max f1                       0.155336     0.37983   233
+max f2                       0.102328     0.5396    297
+max f0point5                 0.246291     0.330026  148
+max accuracy                 0.482324     0.852657  28
+max precision                0.807362     1         0
+max recall                   0.0283956    1         395
+max specificity              0.807362     1         0
+max absolute_mcc             0.155336     0.249455  233
+max min_per_class_accuracy   0.154366     0.666667  234
+max mean_per_class_accuracy  0.145501     0.670782  245
+max tns                      0.807362     2460      0
+max fns                      0.807362     437       0
+max fps                      0.0235816    2460      399
+max tps                      0.0283956    438       395
+max tnr                      0.807362     1         0
+max fnr                      0.807362     0.997717  0
+max fpr                      0.0235816    1         399
+max tpr                      0.0283956    1         395
+
+Gains/Lift Table: Avg response rate: 15.11 %, avg score: 15.12 %
+group    cumulative_data_fraction    lower_threshold    lift      cumulative_lift    response_rate    score      cumulative_response_rate    cumulative_score    capture_rate    cumulative_capture_rate   
+ gain      cumulative_gain    kolmogorov_smirnov
+-------  --------------------------  -----------------  --------  -----------------  ---------------  ---------  --------------------------  ------------------  --------------  ------------------------- 
+ --------  -----------------  --------------------
+1        0.0100069                   0.511561           3.8786    3.8786             0.586207         0.596247   0.586207                    0.596247            0.0388128       0.0388128
+ 287.86    287.86             0.0339347
+2        0.0200138                   0.441561           3.4223    3.65045            0.517241         0.472152   0.551724                    0.534199            0.0342466       0.0730594
+ 242.23    265.045            0.0624903
+3        0.0300207                   0.404343           2.73784   3.34624            0.413793         0.423289   0.505747                    0.497229            0.0273973       0.100457
+ 173.784   234.624            0.0829769
+4        0.0400276                   0.3729             2.28153   3.08007            0.344828         0.386994   0.465517                    0.469671            0.0228311       0.123288
+ 128.153   208.007            0.0980844
+5        0.0500345                   0.355686           2.05338   2.87473            0.310345         0.36507    0.434483                    0.44875             0.0205479       0.143836
+ 105.338   187.473            0.110502
+6        0.100069                    0.301445           1.6427    2.25872            0.248276         0.326862   0.341379                    0.387806            0.0821918       0.226027
+ 64.2702   125.872            0.148385
+7        0.150104                    0.253318           1.96212   2.15985            0.296552         0.277243   0.326437                    0.350952            0.0981735       0.324201
+ 96.2116   115.985            0.205095
+8        0.200138                    0.221814           1.73396   2.05338            0.262069         0.2372     0.310345                    0.322514            0.086758        0.410959
+ 73.3963   105.338            0.248357
+9        0.300207                    0.181754           1.41455   1.84043            0.213793         0.200995   0.278161                    0.282008            0.141553        0.552511
+ 41.4549   84.0435            0.297227
+10       0.399931                    0.14826            1.32787   1.71262            0.200692         0.164383   0.258844                    0.252677            0.13242         0.684932
+ 32.7867   71.2624            0.335745
+11       0.5                         0.12184            0.684459  1.50685            0.103448         0.134334   0.227743                    0.228992            0.0684932       0.753425
+ -31.5541  50.6849            0.298547
+12       0.600069                    0.09889            1.02669   1.42678            0.155172         0.109426   0.215641                    0.209053            0.10274         0.856164
+ 2.66887   42.6777            0.301693
+13       0.699793                    0.0805478          0.457885  1.2887             0.0692042        0.0895205  0.194773                    0.192019            0.0456621       0.901826
+ -54.2115  28.8705            0.238005
+14       0.799862                    0.0638546          0.501937  1.19027            0.0758621        0.0724178  0.179896                    0.177056            0.0502283       0.952055
+ -49.8063  19.0274            0.179291
+15       0.899931                    0.0488789          0.205338  1.08075            0.0310345        0.0563397  0.163344                    0.163633            0.0205479       0.972603
+ -79.4662  8.07526            0.0856109
+16       1                           0.0229989          0.273784  1                  0.0413793        0.039212   0.151139                    0.151182            0.0273973       1
+ -72.6216  0                  0
+
+Cross-Validation Metrics Summary:
+                      mean         sd           cv_1_valid    cv_2_valid    cv_3_valid    cv_4_valid    cv_5_valid
+--------------------  -----------  -----------  ------------  ------------  ------------  ------------  ------------
+accuracy              0.7004824    0.039623544  0.6465517     0.7051724     0.7517241     0.6804836     0.7184801
+aic                   459.91827    14.241162    465.36346     439.1523      466.0423      476.14795     452.88538
+auc                   0.71801984   0.030017208  0.69972223    0.7495425     0.74978113    0.6842353     0.70681816
+err                   0.2995176    0.039623544  0.35344827    0.29482758    0.24827586    0.31951642    0.28151986
+err_count             173.6        22.973898    205.0         171.0         144.0         185.0         163.0
+f0point5              0.31760722   0.037879873  0.27996072    0.330033      0.3773585     0.30120483    0.29947916
+f1                    0.3881807    0.03518416   0.35736677    0.41237113    0.4375        0.37288135    0.36078432
+f2                    0.5013607    0.035893384  0.49393415    0.5494506     0.5204461     0.48932385    0.45364892
+lift_top_group        3.979755     1.2825979    2.2480621     4.54902       3.0851064     5.421348      4.595238
+loglikelihood         0.0          0.0          0.0           0.0           0.0           0.0           0.0
+---                   ---          ---          ---           ---           ---           ---           ---
+mean_per_class_error  0.3300006    0.025613755  0.3467423     0.29453358    0.31118116    0.34509286    0.3524531
+mse                   0.11754704   0.00420868   0.1190306     0.11142896    0.12079106    0.12138312    0.11510146
+null_deviance         492.3862     14.0721445   486.91785     483.49902     514.81464     496.9403      479.75925
+pr_auc                0.3198376    0.039447416  0.26829505    0.34758487    0.36947513    0.3070782     0.30675468
+precision             0.2835145    0.03846948   0.2446352     0.29126215    0.34567901    0.2669903     0.26900584
+r2                    0.083201244  0.024854561  0.057482947   0.10909799    0.11053952    0.0668975     0.071988255
+recall                0.62600285   0.06094683   0.6627907     0.7058824     0.59574467    0.6179775     0.54761904
+residual_deviance     445.91827    14.241162    451.36346     425.1523      452.0423      462.14795     438.88538
+rmse                  0.34280697   0.006166866  0.3450081     0.33380976    0.3475501     0.3484008     0.33926606
+specificity           0.71399593   0.053009294  0.6437247     0.7050505     0.781893      0.6918367     0.74747473
+[24 rows x 8 columns]
+
+
+Scoring History:
+    timestamp            duration    iteration    lambda    predictors    deviance_train    deviance_xval    deviance_se    alpha    iterations    training_rmse        training_logloss    training_r2    
+      training_auc        training_pr_auc    training_lift      training_classification_error
+--  -------------------  ----------  -----------  --------  ------------  ----------------  ---------------  -------------  -------  ------------  -------------------  ------------------  -------------------  ------------------  -----------------  -----------------  -------------------------------
+    2024-09-25 23:21:51  0.000 sec   2            8.2       7             0.84594           0.846821         0.0106617      0
+    2024-09-25 23:21:51  0.008 sec   4            5.1       7             0.843972          0.845249         0.010601       0
+    2024-09-25 23:21:51  0.011 sec   6            3.2       7             0.840975          0.842828         0.0105086      0
+    2024-09-25 23:21:51  0.011 sec   8            2         7             0.836547          0.839197         0.0103717      0
+    2024-09-25 23:21:51  0.025 sec   10           1.2       7             0.830308          0.833957         0.0101792      0
+    2024-09-25 23:21:51  0.031 sec   12           0.76      7             0.822085          0.826821         0.00993091     0
+    2024-09-25 23:21:51  0.037 sec   14           0.47      7             0.812161          0.817834         0.00965167     0
+    2024-09-25 23:21:51  0.039 sec   16           0.29      7             0.801427          0.8076           0.00940828     0
+    2024-09-25 23:21:51  0.039 sec   18           0.18      7             0.79114           0.797256         0.00929073     0
+    2024-09-25 23:21:51  0.039 sec   20           0.11      7             0.782456          0.788054         0.00936385     0
+    2024-09-25 23:21:51  0.055 sec   22           0.07      7             0.77599           0.780878         0.00962588     0
+    2024-09-25 23:21:51  0.055 sec   24           0.044     7             0.77174           0.775984         0.0100165      0
+    2024-09-25 23:21:51  0.055 sec   26           0.027     7             0.769259          0.773073         0.0104527      0
+    2024-09-25 23:21:51  0.070 sec   28           0.017     7             0.767955          0.771565         0.0108616      0
+    2024-09-25 23:21:51  0.080 sec   30           0.01      7             0.767326          0.770887         0.0112021      0
+    2024-09-25 23:21:51  0.086 sec   31           0.0065    7             0.767045          0.770632         0.0114588      0
+    2024-09-25 23:21:51  0.090 sec   32           0.004     7             0.766924          0.770561         0.0116416      0
+    2024-09-25 23:21:51  0.094 sec   33           0.0025    7             0.766874          0.770561         0.0117664      0
+    2024-09-25 23:21:51  0.098 sec   34           0.0016    7             0.766854          0.770577         0.011847       0
+    2024-09-25 23:21:51  0.103 sec   35           0.00096   7             0.766846          0.770596         0.0118995      0        35            0.34225789781808297  0.3834369874611082  0.08695012416893833  0.7217901956416825  0.32355858159183   4.334907888521493  0.25086266390614215
+
+Variable Importances:
+variable    relative_importance    scaled_importance    percentage
+----------  ---------------------  -------------------  ------------
+age         0.57433                1                    0.448645
+sysBP       0.364885               0.635323             0.285035
+cigsPerDay  0.320069               0.557291             0.250026
+totChol     0.0162689              0.0283267            0.0127086
+heartRate   0.00390027             0.00679099           0.00304675
+BMI         0.000689541            0.0012006            0.000538644
+glm prediction progress: |███████████████████████████████████████████████████████ (done)| 100%
+c:\Users\admin\ml_ops_assignment_2\.venv\Lib\site-packages\h2o\frame.py:1981: H2ODependencyWarning: Converting H2O frame to pandas dataframe using single-thread.  For faster conversion using multi-thread, install polars and pyarrow and use it as pandas_df = h2o_df.as_data_frame(use_multi_thread=True)
+
+  warnings.warn("Converting H2O frame to pandas dataframe using single-thread.  For faster conversion using"
+====================================================
+
+Predictions DataFrame:
+   predict        p0        p1
+0        0  0.857256  0.142744
+1        0  0.853495  0.146505
+2        0  0.899711  0.100289
+3        1  0.798847  0.201153
+4        1  0.448789  0.551211
+====================================================
+
+Filtered Prediction Probabilities:
+   predict        p0        p1
+0        0  0.857256  0.142744
+1        0  0.853495  0.146505
+2        0  0.899711  0.100289
+3        1  0.798847  0.201153
+4        1  0.448789  0.551211
+====================================================
+
+Best Model Performance on Test Data:
+ModelMetricsBinomialGLM: glm
+** Reported on test data. **
+
+MSE: 0.11540745585510952
+RMSE: 0.3397167288420008
+LogLoss: 0.3784840892481159
+AUC: 0.7236839401660228
+AUCPR: 0.3182022328322776
+Gini: 0.44736788033204555
+Null degrees of freedom: 1241
+Residual degrees of freedom: 1235
+Null deviance: 1042.0837434086393
+Residual deviance: 940.1544776923196
+AIC: 954.1544776923196
+
+Confusion Matrix (Act/Pred) for max f1 @ threshold = 0.1966356469710714
+       0    1    Error    Rate
+-----  ---  ---  -------  --------------
+0      863  195  0.1843   (195.0/1058.0)
+1      90   94   0.4891   (90.0/184.0)
+Total  953  289  0.2295   (285.0/1242.0)
+
+Maximum Metrics: Maximum metrics at their respective thresholds
+metric                       threshold    value     idx
+---------------------------  -----------  --------  -----
+max f1                       0.196636     0.397463  158
+max f2                       0.111084     0.530627  267
+max f0point5                 0.257472     0.370146  101
+max accuracy                 0.541991     0.855072  3
+max precision                0.666177     1         0
+max recall                   0.0484753    1         365
+max specificity              0.666177     1         0
+max absolute_mcc             0.196636     0.274548  158
+max min_per_class_accuracy   0.146933     0.657609  217
+max mean_per_class_accuracy  0.189311     0.664698  167
+max tns                      0.666177     1058      0
+max fns                      0.666177     183       0
+max fps                      0.0226106    1058      399
+max tps                      0.0484753    184       365
+max tnr                      0.666177     1         0
+max fnr                      0.666177     0.994565  0
+max fpr                      0.0226106    1         399
+max tpr                      0.0484753    1         365
+
+Gains/Lift Table: Avg response rate: 14.81 %, avg score: 14.43 %
+group    cumulative_data_fraction    lower_threshold    lift      cumulative_lift    response_rate    score      cumulative_response_rate    cumulative_score    capture_rate    cumulative_capture_rate   
+ gain      cumulative_gain    kolmogorov_smirnov
+-------  --------------------------  -----------------  --------  -----------------  ---------------  ---------  --------------------------  ------------------  --------------  ------------------------- 
+ --------  -----------------  --------------------
+1        0.010467                    0.463877           3.63462   3.63462            0.538462         0.525995   0.538462                    0.525995            0.0380435       0.0380435
+ 263.462   263.462            0.0323724
+2        0.0201288                   0.423366           2.25      2.97               0.333333         0.444316   0.44                        0.486789            0.0217391       0.0597826
+ 125       197                0.0465501
+3        0.0305958                   0.37936            2.59615   2.84211            0.384615         0.403545   0.421053                    0.458311            0.0271739       0.0869565
+ 159.615   184.211            0.0661626
+4        0.0402576                   0.35809            1.6875    2.565              0.25             0.368315   0.38                        0.436712            0.0163043       0.103261
+ 68.75     156.5              0.0739603
+5        0.0507246                   0.338563           2.07692   2.46429            0.307692         0.3471     0.365079                    0.41822             0.0217391       0.125
+ 107.692   146.429            0.0871928
+6        0.100644                    0.27376            2.39516   2.43               0.354839         0.303568   0.36                        0.361353            0.119565        0.244565
+ 139.516   143                0.168951
+7        0.150564                    0.243464           2.28629   2.38235            0.33871          0.258881   0.352941                    0.327378            0.11413         0.358696
+ 128.629   138.235            0.244329
+8        0.200483                    0.209215           1.85081   2.25               0.274194         0.225323   0.333333                    0.301967            0.0923913       0.451087
+ 85.0806   125                0.294187
+9        0.300322                    0.169093           1.03427   1.84584            0.153226         0.188911   0.273458                    0.264383            0.103261        0.554348
+ 3.42742   84.5845            0.298204
+10       0.400161                    0.142603           1.03427   1.64336            0.153226         0.154919   0.243461                    0.237072            0.103261        0.657609
+ 3.42742   64.336             0.302221
+11       0.5                         0.118341           1.03427   1.52174            0.153226         0.129784   0.225443                    0.215649            0.103261        0.76087
+ 3.42742   52.1739            0.306238
+12       0.599839                    0.0970933          0.870968  1.41342            0.129032         0.107752   0.209396                    0.19769             0.0869565       0.847826
+ -12.9032  41.3423            0.291115
+13       0.699678                    0.0794959          0.544355  1.28941            0.0806452        0.0883115  0.191024                    0.182083            0.0543478       0.902174
+ -45.5645  28.9413            0.237713
+14       0.799517                    0.0642338          0.326613  1.16918            0.0483871        0.071797   0.173212                    0.168311            0.0326087       0.934783
+ -67.3387  16.9184            0.15879
+15       0.899356                    0.0497681          0.59879   1.10586            0.0887097        0.056808   0.163832                    0.155933            0.0597826       0.994565
+ -40.121   10.5864            0.111767
+16       1                           0.0226106          0.054     1                  0.008            0.0404795  0.148148                    0.144313            0.00543478      1
+ -94.6     0                  0
+====================================================
+
+The best model is a glm model.
+The model was selected based on its performance, achieving an AUC of 0.7237 on the test data.
+Parse progress: |████████████████████████████████████████████████████████████████ (done)| 100%
+glm prediction progress: |███████████████████████████████████████████████████████ (done)| 100%
+c:\Users\admin\ml_ops_assignment_2\.venv\Lib\site-packages\h2o\frame.py:1981: H2ODependencyWarning: Converting H2O frame to pandas dataframe using single-thread.  For faster conversion using multi-thread, install polars and pyarrow and use it as pandas_df = h2o_df.as_data_frame(use_multi_thread=True)
+
+  warnings.warn("Converting H2O frame to pandas dataframe using single-thread.  For faster conversion using"
+c:\Users\admin\ml_ops_assignment_2\.venv\Lib\site-packages\h2o\frame.py:1981: H2ODependencyWarning: Converting H2O frame to pandas dataframe using single-thread.  For faster conversion using multi-thread, install polars and pyarrow and use it as pandas_df = h2o_df.as_data_frame(use_multi_thread=True)
+
+  warnings.warn("Converting H2O frame to pandas dataframe using single-thread.  For faster conversion using"
+      predict        p0        p1
+0           0  0.881436  0.118564
+1           0  0.890297  0.109703
+2           0  0.935975  0.064025
+3           0  0.911031  0.088969
+4           0  0.866274  0.133726
+...       ...       ...       ...
+4995        1  0.763119  0.236881
+4996        0  0.876665  0.123335
+4997        0  0.947552  0.052448
+4998        0  0.924304  0.075696
+4999        0  0.928443  0.071557
+
+[5000 rows x 3 columns]
+c:\Users\admin\ml_ops_assignment_2\.venv\Lib\site-packages\h2o\frame.py:1981: H2ODependencyWarning: Converting H2O frame to pandas dataframe using single-thread.  For faster conversion using multi-thread, install polars and pyarrow and use it as pandas_df = h2o_df.as_data_frame(use_multi_thread=True)
+
+  warnings.warn("Converting H2O frame to pandas dataframe using single-thread.  For faster conversion using"
+Instance probabilities:  predict    0.000000
+p0         0.881436
+p1         0.118564
+Name: 12, dtype: float64
+Intercept 0.6954559948951262
+Prediction_local [0.86912855]
+Right: 0.8814356640957375
+Closing connection _sid_b7cc at exit
+H2O session _sid_b7cc closed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
