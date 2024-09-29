@@ -6,7 +6,7 @@ Please install the requirements
 ### Azure Resource Group: BITS_MLops_assignment2
 ### Azure domain: mlops2assignment-cgcxdcgncpdueuax.southindia-01.azurewebsites.net
 
-##Azure Web app details:
+## Azure Web app details:
 
 #### Name: mlops2assignment
 #### Publishing model: Container
